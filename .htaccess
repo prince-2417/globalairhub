@@ -1,0 +1,32 @@
+Options -Indexes
+ServerSignature Off
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Block direct access to hidden files and common sensitive artifacts.
+RewriteRule (^|/)\. - [F]
+RewriteRule ^(?:composer\.(?:json|lock)|package(?:-lock)?\.json|yarn\.lock|README|readme|CHANGELOG|changelog|\.env(?:\..*)?|phpunit\.xml)$ - [F,NC]
+
+# flights/es -> es.php
+RewriteRule ^flights/es/?$ es.php [L]
+
+# destination/sydney -> destinations-details.php?slug=sydney
+RewriteRule ^destination/([^/]+)/?$ destinations-details.php?slug=$1 [L,QSA]
+
+# If the requested file or directory does not exist, serve matching PHP files extensionlessly.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+)$ $1.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+<FilesMatch "(?:^\.|composer\.(?:json|lock)|package(?:-lock)?\.json|yarn\.lock|README|readme|CHANGELOG|changelog|\.env(?:\..*)?|phpunit\.xml)$">
+    Require all denied
+</FilesMatch>

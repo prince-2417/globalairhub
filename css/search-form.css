@@ -1,0 +1,382 @@
+/* ======== Serach From Start ========= */
+
+.booking-box {
+    background: #fff;
+    color: #000;
+    max-width: 1100px;
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    color: #fff !important;
+}
+
+.tab {
+    background: #f59e0b;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.tab.active {
+    background: #f59e0b;
+    color: #fff;
+}
+
+.trip-type {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.form-grid input {
+    padding: 12px;
+    border: 1px solid #f59e0b;
+    border-radius: 30px;
+}
+
+.search-btn1 {
+    background:linear-gradient(135deg, #0d1b3d, #00a2ff);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tab-content1 {
+    display: none;
+}
+
+.tab-content1.active {
+    display: block;
+}
+
+.tab-text {
+    padding: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* ================================
+   INPUT WITH ICON INSIDE
+================================= */
+
+.input-box,
+.date-box {
+    position: relative;
+    width: 100%;
+}
+
+/* Icon positioning */
+.input-box i,
+.date-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f59e0b;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* Input padding so text doesn't overlap icon */
+.input-box input,
+.date-box input {
+    width: 100%;
+    padding: 12px 12px 12px 38px;
+    /* left padding for icon */
+    border: 1px solid #f59e0b;
+    border-radius: 30px;
+    outline: none;
+}
+
+/* Focus effect (optional professional touch) */
+.input-box input:focus, .traveler-input input:focus,
+.date-box input:focus {
+    border-color: red;
+    box-shadow: 0 0 0 2px rgba(150, 148, 36, 0.1);
+}
+
+/* ===============================
+   TRAVELER DROPDOWN
+================================= */
+
+.traveler-wrapper {
+    position: relative;
+    width: 100%;
+}
+.traveler-dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    display: none;
+    z-index: 999;
+}
+
+.traveler-dropdown.active {
+    display: block;
+}
+
+.traveler-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.traveler-counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.traveler-counter button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.traveler-counter .count {
+    min-width: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.class-select {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #f59e0b;
+}
+
+.done-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #0d1b3d, #00a2ff);
+    /* button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .traveler-dropdown {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+        z-index: 9999;
+    }
+}
+
+/* ===============================
+   EXTRA LARGE DEVICES (1400px+)
+================================= */
+@media (min-width: 1400px) {
+    .booking-box {
+        max-width: 1200px;
+    }
+}
+
+/* ===============================
+   LARGE LAPTOPS (1200px - 1399px)
+================================= */
+@media (max-width: 1399px) {
+    .booking-box {
+        max-width: 1000px;
+    }
+}
+
+/* ===============================
+   LAPTOPS (992px - 1199px)
+================================= */
+@media (max-width: 1199px) {
+    .form-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===============================
+   TABLETS (768px - 991px)
+================================= */
+@media (max-width: 991px) {
+    .tabs {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .tab {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trip-type {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* ===============================
+   LARGE MOBILE (576px - 767px)
+================================= */
+@media (max-width: 767px) {
+    .booking-box {
+        padding: 15px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tab {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid input {
+        width: 100%;
+    }
+
+    .search-btn1 {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/* ===============================
+   SMALL MOBILE (400px - 575px)
+================================= */
+@media (max-width: 575px) {
+    .tab-text {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .booking-box {
+        margin: 20px 10px;
+    }
+}
+
+/* ======== Serach From End ========= */
+
+/* ======= Airport Search Suggestions Start ======= */
+.airport-dropdown {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #f59e0b;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 9999;
+    border-radius: 6px;
+    margin-top: 2px;
+}
+
+.airport-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.airport-item:hover {
+    background: #f5f5f5;
+}
+
+.airport-code {
+    font-weight: bold;
+    color: #f59e0b;
+    margin-right: 5px;
+}
+
+/* ======= Airport Search Suggestions End ======= */
+
+
+/* ======= Preloader =======  */
+#flightPreloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 99999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flight-loader {
+    font-family: Arial;
+}
+
+.plane {
+    font-size: 60px;
+    color: #ffa903;
+    animation: fly 1.5s infinite ease-in-out;
+}
+
+.flight-loader p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(-20px);
+    }
+}

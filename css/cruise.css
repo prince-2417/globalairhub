@@ -1,0 +1,621 @@
+/* ===========================
+   CRUISE PAGE — COMPLETE STYLES
+   =========================== */
+
+* { box-sizing: border-box; }
+
+.cruise-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── HERO ── */
+.cruise-hero {
+    position: relative;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.cruise-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.cruise-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+}
+
+.cruise-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(5,20,55,0.6) 0%, rgba(5,20,55,0.45) 100%);
+}
+
+.cruise-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 20px;
+    width: 100%;
+}
+
+.cruise-hero-content h1 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cruise-call-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #f47c20;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 55px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(244,124,32,0.4);
+}
+
+.cruise-call-btn:hover {
+    background: #d96a10;
+    transform: translateY(-2px);
+}
+
+/* ── REVIEWS BAR ── */
+.cruise-reviews-bar {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-top: none;
+    padding: 0;
+}
+
+.crb-inner {
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    scrollbar-width: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.crb-inner::-webkit-scrollbar { display: none; }
+
+.crb-item {
+    flex: 1 1 0;
+    min-width: 150px;
+    padding: 16px 20px;
+    border-right: 1px solid #ebebeb;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.crb-item:last-of-type { border-right: none; }
+
+/* Logos */
+.crb-logo {
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 2px;
+    white-space: nowrap;
+}
+
+.tp-logo-text { color: #111; font-size: 14px; }
+.tp-star-icon { color: #00b67a; font-size: 16px; line-height: 1; }
+
+.sc-blue  { color: #1a73e8; font-size: 13px; font-weight: 700; }
+.sc-orange{ color: #f47c20; font-size: 13px; font-weight: 700; }
+.sc-icon  { color: #f47c20; font-size: 13px; }
+
+.reviews-logo { color: #111; font-size: 12px; font-weight: 800; }
+.rr-logo      { color: #111; font-size: 11px; font-weight: 800; flex-wrap: wrap; }
+
+.google-logo-text { font-size: 17px; font-weight: 700; letter-spacing: -0.5px; }
+.g-blue   { color: #4285F4; }
+.g-red    { color: #EA4335; }
+.g-yellow { color: #FBBC05; }
+.g-green  { color: #34A853; }
+
+.crb-info  { color: #bbb; font-size: 10px; margin-left: 2px; }
+.crb-check { color: #1a73e8; font-size: 11px; }
+
+/* Stars */
+.crb-stars {
+    font-size: 17px;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: 2px 0;
+}
+
+.tp-stars-row {
+    display: flex;
+    gap: 2px;
+    margin: 4px 0;
+}
+
+.tp-box {
+    width: 20px;
+    height: 20px;
+    background: #00b67a;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.tp-box.half {
+    background: linear-gradient(to right, #00b67a 60%, #dcdce6 60%);
+}
+
+.orange-stars { color: #f47c20; }
+.black-stars  { color: #222; }
+.half-star    { opacity: 0.35; }
+
+.crb-score {
+    font-size: 12px;
+    color: #111;
+    font-weight: 600;
+}
+
+.crb-count {
+    font-size: 11px;
+    color: #777;
+    line-height: 1.5;
+}
+
+.crb-arrow {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #555;
+    font-size: 12px;
+    align-self: center;
+    margin: 0 14px;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.crb-arrow:hover {
+    background: #f5f5f5;
+    border-color: #bbb;
+}
+
+/* ── DEALS SECTION ── */
+.cruise-deals-section {
+    background: #0d1b3e;
+    padding: 50px 0 60px;
+}
+
+.cruise-deals-title {
+    font-size: 26px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 30px;
+    letter-spacing: -0.3px;
+}
+
+.cruise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* ── CRUISE CARD ── */
+.cruise-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    height: 420px;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cruise-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 45px rgba(0,0,0,0.5);
+}
+
+/* Full background image */
+.cc-img-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.cc-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.cruise-card:hover .cc-img-wrap img {
+    transform: scale(1.08);
+}
+
+/* Dark gradient overlay */
+.cc-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.08) 0%,
+        rgba(0,0,0,0.15) 35%,
+        rgba(0,10,40,0.88) 75%,
+        rgba(0,10,40,0.97) 100%
+    );
+}
+
+/* Price badge — top right */
+.cc-price-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 3;
+    background: linear-gradient(135deg, #1b264f, #1a73e8);
+    border-radius: 10px;
+    padding: 8px 14px;
+    text-align: right;
+    line-height: 1.2;
+}
+
+.cc-starting {
+    display: block;
+    font-size: 9px;
+    color: rgba(255,255,255,0.75);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cc-price {
+    display: block;
+    font-size: 22px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+/* Airline logo badge — top left */
+.cc-logo-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 3;
+    background: rgba(255,255,255,0.95);
+    border-radius: 8px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 130px;
+    height: 36px;
+}
+
+.cc-airline-logo {
+    max-height: 26px;
+    max-width: 110px;
+    object-fit: contain;
+}
+
+/* Bottom content */
+.cc-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: 20px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.cc-top-row { display: none; }
+
+.cc-ship-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    line-height: 1.2;
+}
+
+.cc-ship-icon {
+    color: #f47c20;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.cc-depart {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cc-cal-icon {
+    color: #f47c20;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.cc-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cc-perks li {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.3;
+}
+
+.cc-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #f47c20;
+    flex-shrink: 0;
+}
+
+.cc-book-btn {
+    display: block;
+    width: 100%;
+    background: #fff;
+    color: #0d1b3e;
+    text-align: center;
+    padding: 11px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 0.2px;
+    margin-top: 4px;
+}
+
+.cc-book-btn:hover {
+    background: #f47c20;
+    color: #fff;
+}
+
+/* ── SEO SECTION ── */
+.cruise-seo-section {
+    background: linear-gradient(135deg, #0a1628 0%, #0d2550 60%, #0a1628 100%);
+    padding: 70px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cruise-seo-section::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(26,115,232,0.07);
+    top: -200px;
+    right: -150px;
+    pointer-events: none;
+}
+
+.cruise-seo-section::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(244,124,32,0.05);
+    bottom: -150px;
+    left: -100px;
+    pointer-events: none;
+}
+
+.cruise-seo-inner {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cruise-seo-left {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.cruise-seo-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(244,124,32,0.15);
+    border: 1px solid rgba(244,124,32,0.35);
+    color: #f47c20;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+
+.cruise-seo-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.cruise-seo-title span {
+    color: #f47c20;
+}
+
+.cruise-seo-section p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.9;
+    margin: 0;
+}
+
+.cruise-seo-section p a {
+    color: #f47c20;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(244,124,32,0.4);
+    transition: border-color 0.2s;
+}
+
+.cruise-seo-section p a:hover {
+    border-color: #f47c20;
+}
+
+/* Right CTA Card */
+.cruise-seo-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.csc-icon {
+    width: 54px;
+    height: 54px;
+    background: linear-gradient(135deg, #f47c20, #e05c00);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+}
+
+.csc-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.csc-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.csc-perks li {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.75);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.csc-perks li i {
+    color: #f47c20;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.csc-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #f47c20;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    text-align: center;
+}
+
+.csc-btn:hover {
+    background: #d96a10;
+    transform: translateY(-2px);
+}
+
+.csc-note {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    margin: -10px 0 0;
+}
+
+@media (max-width: 768px) {
+    .cruise-seo-inner { grid-template-columns: 1fr; gap: 36px; }
+    .cruise-seo-title { font-size: 24px; }
+    .cruise-seo-section { padding: 50px 0; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 991px) {
+    .cruise-grid { grid-template-columns: repeat(2, 1fr); }
+    .cruise-hero-content h1 { font-size: 26px; }
+    .crb-item { min-width: 140px; padding: 14px 16px; }
+}
+
+@media (max-width: 640px) {
+    .cruise-grid { grid-template-columns: 1fr; }
+    .cruise-hero-content h1 { font-size: 20px; }
+    .cruise-call-btn { font-size: 16px; padding: 13px 36px; }
+    .crb-item { min-width: 130px; padding: 12px 12px; }
+    .cruise-deals-title { font-size: 18px; }
+    .cc-img-wrap { height: 200px; }
+}

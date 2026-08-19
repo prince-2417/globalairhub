@@ -1,0 +1,352 @@
+.cars-hero {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.cars-hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.cars-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cars-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(17, 28, 62, 0.45) 0%, rgba(17, 28, 62, 0.9) 100%);
+}
+
+.cars-hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.cars-hero-tag {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.cars-hero-content h1 {
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    line-height: 1.05;
+    margin-bottom: 18px;
+}
+
+.cars-hero-content p {
+    max-width: 560px;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: rgba(255,255,255,0.9);
+}
+
+.cars-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    border-radius: 999px;
+    background: #ff8c42;
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cars-hero-cta:hover {
+    transform: translateY(-1px);
+    background: #ffa15a;
+}
+
+.cars-hero-stats {
+    display: grid;
+    gap: 16px;
+    min-width: 240px;
+}
+
+.cars-hero-stats div {
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.cars-hero-stats strong {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.car-search-bar {
+    background: #1b264f;
+    padding: 16px 0 14px;
+    margin-bottom: 30px;
+}
+
+.cars-info-section {
+    margin-bottom: 30px;
+}
+
+.cars-info-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.cars-info-copy .section-tag {
+    display: inline-block;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #1a73e8;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.cars-info-copy h2 {
+    font-size: 2.4rem;
+    margin-bottom: 18px;
+}
+
+.cars-info-copy p {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 620px;
+}
+
+.cars-info-list {
+    margin-top: 24px;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    padding: 0;
+}
+
+.cars-info-list li {
+    background: white;
+    border-radius: 16px;
+    padding: 16px 18px;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.04);
+    color: #333;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.cars-info-stats {
+    display: grid;
+    gap: 18px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.05);
+}
+
+.info-card h3 {
+    font-size: 2rem;
+    margin: 0 0 10px;
+    color: #1b264f;
+}
+
+.info-card p {
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+}
+
+.cars-deals-section .section-heading {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.cars-deals-section .section-heading span {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 12px;
+    color: #1a73e8;
+    margin-bottom: 10px;
+}
+
+.cars-deals-section .section-heading h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.cars-deals-section .section-heading p {
+    color: #555;
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.cars-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.car-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+}
+
+.car-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.car-card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.car-card-body h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.car-card-body p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.car-card-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #666;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.car-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.car-card-bottom strong {
+    font-size: 20px;
+    color: #111;
+}
+
+.btn-small {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #1a73e8;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.cars-benefits-section {
+    margin: 40px 0;
+}
+
+.cars-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.benefit-card {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.benefit-card i {
+    font-size: 26px;
+    color: #1a73e8;
+}
+
+.benefit-card h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.benefit-card p {
+    color: #555;
+    line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+    .cars-grid,
+    .cars-benefits-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cars-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .cars-hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cars-hero-stats {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .cars-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cars-grid,
+    .cars-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
