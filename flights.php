@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/flight.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/search-form.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body>
@@ -18,80 +21,40 @@
     <section class="flight-hero">
         <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1400&q=80" alt="Airplane in sky" class="flight-hero-bg">
         <div class="flight-hero-content">
-            <div class="promo-card">
-                <h3>Online Flight Deals</h3>
-                <p class="promo-tagline">Subscribe &amp; get up to $10 off. Now!</p>
-                <div class="promo-form">
-                    <input type="email" placeholder="E-mail Address">
-                    <button type="button">Get Promo</button>
+            <form action="flights-results" method="post" id="serachform">
+                <div class="booking-box">
+                    <div class="tab-content1 active" id="flights">
+                        <div class="trip-type">
+                            <label><input type="radio" name="tripType" value="roundtrip" checked> Round Trip</label>
+                            <label><input type="radio" name="tripType" value="oneway"> One Way</label>
+                        </div>
+                        <div class="form-grid">
+                            <div class="input-box">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <input type="text" id="fromAirport" name="from_code" placeholder="From Where?">
+                            </div>
+                            <div class="input-box">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <input type="text" id="toAirport" name="to_code" placeholder="To Where?">
+                            </div>
+                            <div class="date-box" id="departDateBox">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <input type="text" id="date1" name="depart_date" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="date-box" id="returnDateBox">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <input type="text" id="date2" name="return_date" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="traveler-wrapper">
+                                <input type="text" class="traveler-input" name="travelers" placeholder="1 Passenger, Economy" readonly>
+                            </div>
+                            <button class="search-btn1">Search</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="super-saver">
-                <span class="ss-title">Super Saver</span>
-                <span class="ss-route">Los Angeles <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i> Las Vegas</span>
-                <div class="ss-price"><sup>$</sup>46.96<sup style="font-size:14px;">*</sup></div>
-                <span class="ss-dates">19 Sep 2026 - 21 Sep 2026</span>
-                <div class="ss-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </div>
+            </form>
         </div>
     </section>
-
-    <!-- Search Bar -->
-    <div class="flight-search-bar">
-        <div class="fsb-container">
-            <div class="trip-type-row">
-                <label class="trip-radio"><input type="radio" name="trip" checked> Round trip</label>
-                <label class="trip-radio"><input type="radio" name="trip"> Oneway</label>
-            </div>
-            <div class="search-inputs-row">
-                <div class="si-field">
-                    <i class="fa-solid fa-location-dot" style="color:#e53935;"></i>
-                    <input type="text" value="Delhi(DEL), Indira Gand...">
-                </div>
-                <div class="si-field">
-                    <i class="fa-solid fa-location-dot" style="color:#1a73e8;"></i>
-                    <input type="text" placeholder="Destination">
-                </div>
-                <div class="si-field date-field">
-                    <i class="fa-regular fa-calendar" style="color:#1a73e8;"></i>
-                    <input type="text" value="07-27-2026" readonly>
-                </div>
-                <div class="si-field date-field">
-                    <i class="fa-regular fa-calendar" style="color:#1a73e8;"></i>
-                    <input type="text" value="08-01-2026" readonly>
-                </div>
-                <div class="si-field traveler-field">
-                    <i class="fa-solid fa-user" style="color:#1a73e8;"></i>
-                    <div class="select-wrapper">
-                        <select>
-                            <option>1 Traveler</option>
-                            <option>2 Travelers</option>
-                            <option>3 Travelers</option>
-                            <option>4 Travelers</option>
-                        </select>
-                        <i class="fa-solid fa-chevron-down chevron"></i>
-                    </div>
-                </div>
-                <div class="si-field class-field">
-                    <i class="fa-solid fa-chair" style="color:#1a73e8;"></i>
-                    <div class="select-wrapper">
-                        <select>
-                            <option>Economy</option>
-                            <option>Business</option>
-                            <option>First Class</option>
-                            <option>Premium Economy</option>
-                        </select>
-                        <i class="fa-solid fa-chevron-down chevron"></i>
-                    </div>
-                </div>
-                <button class="btn-search-flight">Search</button>
-            </div>
-            <div class="search-bottom-row">
-                <label class="direct-flights-check"><input type="checkbox"> Direct Flights Only</label>
-                <span class="unaccompanied-link">Unaccompanied Minor</span>
-            </div>
-        </div>
-    </div>
 
     <!-- Reviews Marquee -->
     <section class="flt-reviews-banner">
@@ -531,15 +494,15 @@
                         Speak With a Travel Expert
                     </p>
 
-                    <a href="tel:+12163022732" class="flt-cta-number">
-                        +1-216-302-2732
+                    <a href="tel:18775133980" class="flt-cta-number">
+                        1-877-513-3980
                     </a>
 
                     <p class="flt-cta-avail">
                         Travel assistance available 24/7
                     </p>
 
-                    <a href="tel:+12163022732" class="flt-cta-call-btn">
+                    <a href="tel:18775133980" class="flt-cta-call-btn">
                         <i class="fa-solid fa-phone"></i> Call Now
                     </a>
 
@@ -650,222 +613,18 @@
     </section>
 
 
-    <!-- Booking Modal -->
-    <div class="booking-modal-overlay" id="bookingModal">
-        <div class="booking-modal">
-   
-            <button class="modal-close" id="modalClose" aria-label="Close booking search">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div class="modal-header">
-
-                <div class="modal-route-info">
-
-                    <div class="modal-city">
-                        <span class="modal-code" id="modalFrom">JFK</span>
-                        <span class="modal-city-name" id="modalFromCity">New York</span>
-                    </div>
-
-                    <div class="modal-route-arrow">
-                        <i class="fa-solid fa-plane"></i>
-                    </div>
-
-                    <div class="modal-city">
-                        <span class="modal-code" id="modalTo">LHR</span>
-                        <span class="modal-city-name" id="modalToCity">London</span>
-                    </div>
-
-                </div>
-
-                <div class="modal-price-badge">
-                    <span class="modal-price-label">Flight Options From</span>
-                    <span class="modal-price-val">
-                        $<span id="modalPrice">199</span>*
-                    </span>
-                    <span class="modal-price-type">Round Trip / Traveler</span>
-                </div>
-
-            </div>
-
-            <div class="modal-body">
-
-                <form class="booking-form" onsubmit="return false;">
-
-                    <!-- Trip Type -->
-                    <div class="modal-trip-row">
-
-                        <label class="modal-radio">
-                            <input type="radio" name="mtrip" value="roundtrip" checked>
-                            Round Trip
-                        </label>
-
-                        <label class="modal-radio">
-                            <input type="radio" name="mtrip" value="oneway">
-                            One Way
-                        </label>
-
-                    </div>
-
-                    <!-- Search Fields -->
-                    <div class="modal-search-grid">
-
-                        <!-- From -->
-                        <div class="msi-field">
-                            <i class="fa-solid fa-location-dot" style="color:#e53935;"></i>
-                            <input
-                                type="text"
-                                id="modalFromInput"
-                                placeholder="From – City or Airport"
-                                autocomplete="off">
-                        </div>
-
-                        <!-- Destination -->
-                        <div class="msi-field">
-                            <i class="fa-solid fa-location-dot" style="color:#1a73e8;"></i>
-                            <input
-                                type="text"
-                                id="modalToInput"
-                                placeholder="To – City or Airport"
-                                autocomplete="off">
-                        </div>
-
-                        <!-- Departure -->
-                        <div class="msi-field">
-                            <i class="fa-regular fa-calendar" style="color:#1a73e8;"></i>
-                            <input
-                                type="text"
-                                id="modalDepart"
-                                placeholder="Departure Date"
-                                readonly>
-                        </div>
-
-                        <!-- Return -->
-                        <div class="msi-field">
-                            <i class="fa-regular fa-calendar" style="color:#1a73e8;"></i>
-                            <input
-                                type="text"
-                                id="modalReturn"
-                                placeholder="Return Date"
-                                readonly>
-                        </div>
-
-                        <!-- Travelers -->
-                        <div class="msi-field">
-                            <i class="fa-solid fa-user" style="color:#1a73e8;"></i>
-
-                            <select id="modalTravelers">
-                                <option value="1">1 Traveler</option>
-                                <option value="2">2 Travelers</option>
-                                <option value="3">3 Travelers</option>
-                                <option value="4">4 Travelers</option>
-                                <option value="5">5 Travelers</option>
-                                <option value="6">6 Travelers</option>
-                                <option value="7">7 Travelers</option>
-                                <option value="8">8 Travelers</option>
-                                <option value="9">9 Travelers</option>
-                            </select>
-                        </div>
-
-                        <!-- Cabin Class -->
-                        <div class="msi-field">
-                            <i class="fa-solid fa-chair" style="color:#1a73e8;"></i>
-
-                            <select id="modalCabin">
-                                <option value="economy">Economy</option>
-                                <option value="premium-economy">Premium Economy</option>
-                                <option value="business">Business Class</option>
-                                <option value="first">First Class</option>
-                            </select>
-                        </div>
-
-                    </div>
-
-                    <!-- Additional Options -->
-                    <div class="modal-bottom-row">
-
-                        <label class="modal-check">
-                            <input type="checkbox" id="directFlights">
-                            Direct Flights Only
-                        </label>
-
-                        <label class="modal-check">
-                            <input type="checkbox" id="minorTraveler">
-                            Traveling with an Unaccompanied Minor
-                        </label>
-
-                    </div>
-
-                    <!-- Actions -->
-                    <div class="bform-actions">
-
-                        <button
-                            type="button"
-                            class="btn-cancel"
-                            id="btnCancel">
-                            Cancel
-                        </button>
-
-                        <button
-                            type="submit"
-                            class="btn-book">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            Search Flights
-                        </button>
-
-                    </div>
-
-                    <p class="modal-disclaimer">
-                        *Displayed fares are subject to availability and may change at the time of booking.
-                    </p>
-
-                </form>
-
-            </div>
-
-        </div>
- 
-
-    </div>
-
-
-
     <?php include('include/footer.php'); ?>
 
     <script>
-        const cards = document.querySelectorAll('.deal-card');
-        const modal = document.getElementById('bookingModal');
-        const modalClose = document.getElementById('modalClose');
-        const btnCancel = document.getElementById('btnCancel');
-
-        cards.forEach(card => {
+        document.querySelectorAll('.deal-card').forEach(card => {
             card.addEventListener('click', () => {
-                document.getElementById('modalFrom').textContent = card.dataset.from;
-                document.getElementById('modalFromCity').textContent = card.dataset.fromCity;
-                document.getElementById('modalTo').textContent = card.dataset.to;
-                document.getElementById('modalToCity').textContent = card.dataset.toCity;
-                document.getElementById('modalDepart').value = card.dataset.depart;
-                document.getElementById('modalReturn').value = card.dataset.return;
-                document.getElementById('modalPrice').textContent = card.dataset.price;
-                document.getElementById('modalFromInput').value = card.dataset.from + ' - ' + card.dataset.fromCity;
-                document.getElementById('modalToInput').value = card.dataset.to + ' - ' + card.dataset.toCity;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                document.getElementById('fromAirport').value = card.dataset.from + ' - ' + card.dataset.fromCity;
+                document.getElementById('toAirport').value = card.dataset.to + ' - ' + card.dataset.toCity;
+                document.getElementById('serachform').scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
         });
-
-        function closeModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        modalClose.addEventListener('click', closeModal);
-        btnCancel.addEventListener('click', closeModal);
-        modal.addEventListener('click', e => {
-            if (e.target === modal) closeModal();
-        });
     </script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script>`n    <script src="js/search-form.js"></script>
 
 </body>
 

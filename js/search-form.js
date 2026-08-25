@@ -5,22 +5,19 @@ const dateInputs = document.querySelectorAll(
 const today = new Date().toISOString().split("T")[0];
 
 dateInputs.forEach((input) => {
-  input.value = today;
+  if (!input.value) input.value = today;
   input.addEventListener("click", function () {
     // Try native picker (if browser supports)
     if (this.showPicker) this.showPicker();
   });
 });
 
-// Initialize flatpickr
-flatpickr("#date1", {
-  dateFormat: "Y-m-d",
-  defaultDate: "today",
-});
-
-flatpickr("#date2", {
-  dateFormat: "Y-m-d",
-  defaultDate: "today",
+// Initialize flatpickr while keeping any date selected on the previous page.
+document.querySelectorAll("#date1, #date2").forEach((input) => {
+  flatpickr(input, {
+    dateFormat: "Y-m-d",
+    defaultDate: input.value || "today",
+  });
 });
 
 /* ======= Paasenger & class Function ======== */
@@ -130,8 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Default value
-  input.value = "1 Passenger, Economy";
+  // Keep the value submitted from the previous page; use the default for a new search only.
+  if (!input.value) input.value = "1 Passenger, Economy";
 });
 
 // ======= Trip Type Toggle Function ========

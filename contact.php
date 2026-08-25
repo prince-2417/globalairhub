@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/contact.css?v=3">
 </head>
 
 <body>
@@ -46,8 +46,8 @@
                         with flights, cruises, travel plans, and bookings.
                     </p>
 
-                    <a href="tel:+12163022732" class="cnt-info-link">
-                        +1-216-302-2732
+                    <a href="tel:+1-877-513-3980" class="cnt-info-link">
+                        1-877-513-3980
                     </a>
 
                     <span class="cnt-info-note">
@@ -73,8 +73,8 @@
                         email and our support team will assist you.
                     </p>
 
-                    <a href="mailto:support@globalairhub.com" class="cnt-info-link">
-                        support@globalairhub.com
+                    <a href="mailto:info@globalairhub.com" class="cnt-info-link">
+                        info@globalairhub.com
                     </a>
 
                     <span class="cnt-info-note">
@@ -127,7 +127,7 @@
                         specialists are ready to help you explore your options.
                     </p>
 
-                    <a href="tel:+12163022732"
+                    <a href="tel:+1-877-513-3980"
                         class="cnt-info-link">
                         Speak to a Travel Expert
                     </a>
@@ -378,41 +378,6 @@
                 <!-- Right Side -->
                 <div class="cnt-side">
 
-                    <!-- Travel Support -->
-                    <div class="cnt-map-wrap">
-
-                        <div class="cnt-support-card">
-
-                            <div class="cnt-support-icon">
-                                <i class="fa-solid fa-headset"></i>
-                            </div>
-
-                            <span class="cnt-support-tag">
-                                GLOBAL AIR HUB SUPPORT
-                            </span>
-
-                            <h3>
-                                Need Immediate Travel Assistance?
-                            </h3>
-
-                            <p>
-                                Skip the form and speak directly with one of our
-                                travel specialists for help with flights, cruises,
-                                and bookings.
-                            </p>
-
-                            <a
-                                href="tel:+12163022732"
-                                class="cnt-support-btn">
-                                <i class="fa-solid fa-phone-volume"></i>
-                                Call +1-216-302-2732
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
                     <!-- Quick Contact -->
                     <div class="cnt-quick-box">
 
@@ -427,7 +392,7 @@
                         </p>
 
                         <a
-                            href="tel:+12163022732"
+                            href="tel:+1-877-513-3980"
                             class="cnt-quick-call">
 
                             <i class="fa-solid fa-phone"></i>
@@ -438,7 +403,7 @@
                                 </span>
 
                                 <strong>
-                                    +1-216-302-2732
+                                    1-877-513-3980
                                 </strong>
                             </div>
 

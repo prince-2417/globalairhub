@@ -11,7 +11,7 @@
 .fr-hero {
     position: relative;
     overflow: hidden;
-    min-height: 340px;
+    min-height: 500px;
     /* margin: 0 20px 24px; */
     /* border-radius: 24px; */
     display: flex;
@@ -34,10 +34,27 @@
     width: 100%;
     max-width: 1180px;
     display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+    padding: 42px 32px 28px;
+}
+
+.fr-hero-top {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding: 40px 32px;
+}
+
+.fr-hero-search {
+    width: 100%;
+}
+
+.fr-hero-search .booking-box {
+    max-width: none;
+    margin: 0;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
 }
 
 .fr-hero-copy {
@@ -780,6 +797,22 @@
    RESPONSIVE
 ══════════════════════════════ */
 @media (max-width: 991px) {
+    .fr-hero { min-height: 0; }
+    .fr-hero-top { align-items: flex-start; }
+    .fr-hero-stats { min-width: 180px; }
+    .fr-hero-stats div { padding: 12px 14px; }
+    .fr-hero-stats strong { font-size: 1.2rem; }
+    .fr-hero-search .search-inputs-row {
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .fr-hero-search .si-field,
+    .fr-hero-search .si-field.date-field,
+    .fr-hero-search .si-field.traveler-field,
+    .fr-hero-search .si-field.class-field {
+        flex: 1 1 calc(33.333% - 6px);
+    }
+    .fr-hero-search .btn-search-flight { flex: 1 1 calc(33.333% - 6px); }
     .fr-container { grid-template-columns: 1fr; }
     .fr-filters { position: static; }
     .fr-filter-group:not(:first-of-type) { display: none; }
@@ -789,6 +822,20 @@
 }
 
 @media (max-width: 768px) {
+    .fr-hero-content { padding: 32px 20px 24px; }
+    .fr-hero-top { flex-direction: column; }
+    .fr-hero-copy { max-width: none; }
+    .fr-hero-copy h1 { font-size: 2rem; }
+    .fr-hero-stats { grid-template-columns: repeat(3, 1fr); width: 100%; }
+    .fr-hero-stats div { font-size: 0.78rem; }
+    .fr-hero-search { padding: 16px; }
+    .fr-hero-search .si-field,
+    .fr-hero-search .si-field.date-field,
+    .fr-hero-search .si-field.traveler-field,
+    .fr-hero-search .si-field.class-field,
+    .fr-hero-search .btn-search-flight {
+        flex: 1 1 calc(50% - 4px);
+    }
     .fr-page { padding: 16px 0 40px; }
     .fr-card-main { grid-template-columns: 1fr; gap: 14px; padding: 16px; }
     .fr-airline-col { flex-direction: row; align-items: center; gap: 10px; }
@@ -803,6 +850,28 @@
 }
 
 @media (max-width: 480px) {
+    .fr-hero-content { padding: 28px 15px 20px; gap: 20px; }
+    .fr-hero-copy h1 { font-size: 1.7rem; }
+    .fr-hero-copy p { font-size: 0.9rem; line-height: 1.6; }
+    .fr-hero-cta { padding: 11px 18px; }
+    .fr-hero-stats { grid-template-columns: 1fr; gap: 8px; }
+    .fr-hero-stats div { padding: 10px 12px; }
+    .fr-hero-stats strong { display: inline; margin: 0 4px 0 0; }
+    .fr-hero-search { padding: 14px; }
+    .fr-hero-search .trip-type-row { gap: 16px; }
+    .fr-hero-search .search-inputs-row { gap: 8px; }
+    .fr-hero-search .si-field,
+    .fr-hero-search .si-field.date-field,
+    .fr-hero-search .si-field.traveler-field,
+    .fr-hero-search .si-field.class-field,
+    .fr-hero-search .btn-search-flight {
+        flex-basis: 100%;
+    }
+    .fr-hero-search .search-bottom-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
     .fr-container { padding: 0 12px; }
     .fr-time { font-size: 18px; }
     .fr-dur-time { font-size: 11px; }

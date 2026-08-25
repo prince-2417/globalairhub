@@ -23,7 +23,7 @@
 
     <div class="bottom-header">
         <div class="container">
-            <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-controls="main-nav" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <nav class="main-nav" id="main-nav">

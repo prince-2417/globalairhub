@@ -331,6 +331,9 @@
 }
 
 @media (max-width: 760px) {
+    .cars-hero { min-height: auto; }
+    .cars-hero-content { padding: 48px 16px; }
+
     .cars-hero-content {
         flex-direction: column;
         text-align: center;
@@ -349,4 +352,12 @@
     .cars-benefits-grid {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 480px) {
+    .cars-hero-tag { padding: 8px 12px; font-size: 10px; }
+    .cars-hero-content h1, .cars-info-copy h2, .cars-deals-section .section-heading h2 { font-size: 26px; }
+    .cars-hero-cta, .btn-small { width: 100%; }
+    .car-card-body, .benefit-card, .info-card { padding: 18px; }
+    .car-card-bottom { flex-direction: column; align-items: stretch; gap: 12px; }
 }

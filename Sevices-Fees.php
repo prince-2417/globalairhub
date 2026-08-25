@@ -4,771 +4,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disclaimer | Global Air Hub</title>
+    <title>Service Fees | Global Air Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/disclaimer.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: #333;
+        }
+
+        .sf-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 30px 70px;
+        }
+
+        .sf-page h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1b264f;
+            margin-bottom: 24px;
+        }
+
+        .sf-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 14px;
+        }
+
+        .sf-table th {
+            text-align: left;
+            font-size: 13px;
+            font-weight: 700;
+            color: #1b264f;
+            padding: 8px 10px 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sf-table td {
+            padding: 12px 10px 12px 0;
+            font-size: 13px;
+            color: #444;
+            vertical-align: top;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sf-table td:first-child {
+            width: 38%;
+        }
+
+        .sf-table td strong {
+            display: block;
+            color: #1b264f;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .sf-table td small {
+            color: #1a73e8;
+            font-size: 12px;
+        }
+
+        .sf-table td.applicable {
+            color: #1a73e8;
+        }
+
+        .sf-table td.code-col {
+            color: #555;
+            font-size: 13px;
+        }
+
+        .sf-note-currency {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .sf-disclaimer {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .sf-bold-note {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1b264f;
+            margin-bottom: 18px;
+        }
+
+        .sf-variations-title {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        .sf-variations-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 18px 0;
+        }
+
+        .sf-variations-list li {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .sf-contact-center {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .sf-contact-center strong {
+            color: #1b264f;
+        }
+
+        .sf-important {
+            margin-bottom: 18px;
+        }
+
+        .sf-important p {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.7;
+            margin: 0 0 4px;
+            text-transform: uppercase;
+        }
+
+        .sf-important strong {
+            font-size: 13px;
+            color: #1b264f;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .sf-terms {
+            font-size: 13px;
+            color: #333;
+        }
+
+        .sf-terms a {
+            color: #1a73e8;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
 
     <?php include 'include/header.php'; ?>
 
-    <section class="disclaimer-hero" aria-labelledby="disclaimer-hero-title">
+    <section class="disclaimer-hero" aria-labelledby="sf-hero-title">
         <div class="disclaimer-hero-inner">
             <div>
                 <p>Global Air Hub</p>
-
-                <h1 id="disclaimer-hero-title">
-                    Transparent service fees.
-                </h1>
-
-                <span>
-                    Clear information about the service fees that may apply
-                    to your Global Air Hub travel bookings.
-                </span>
+                <h1 id="sf-hero-title">Transparent service fees.</h1>
+                <span>Clear information about the service fees that may apply to your Global Air Hub travel bookings.</span>
             </div>
-
             <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i>
         </div>
     </section>
 
-
-    <main class="disclaimer-page">
-
-        <div class="disclaimer-container">
-
-
-            <!-- =====================================================
-             LEGAL HEADER
-        ====================================================== -->
-
-            <header class="legal-hero">
-
-                <p class="legal-eyebrow">
-                    Fees &amp; Charges
-                </p>
-
-                <h1>
-                    Service Fees
-                </h1>
-
-                <p>
-                    Global Air Hub may charge service fees for certain travel
-                    booking and assistance services. These fees are separate
-                    from airline fares, government taxes, and other charges
-                    imposed by airlines or travel providers.
-                </p>
-
-                <span>
-                    <i class="fa-regular fa-calendar"></i>
-                    Last Updated: August 19, 2026
-                </span>
-
-            </header>
-
-
-            <div class="legal-layout">
-
-
-                <!-- =====================================================
-                 SIDEBAR
-            ====================================================== -->
-
-                <aside class="legal-sidebar">
-
-                    <p>
-                        On This Page
-                    </p>
-
-                    <a href="#overview">
-                        Service Fee Overview
-                    </a>
-
-                    <a href="#booking-fees">
-                        Standard Booking Fees
-                    </a>
-
-                    <a href="#additional-fees">
-                        Additional Service Fees
-                    </a>
-
-                    <a href="#contact-center">
-                        Contact Center Fees
-                    </a>
-
-                    <a href="#currency">
-                        Currency &amp; Passenger Categories
-                    </a>
-
-                    <a href="#refunds">
-                        Refund &amp; Cancellation Policy
-                    </a>
-
-                    <a href="#payment">
-                        Payment &amp; Fee Disclosure
-                    </a>
-
-                    <a href="#important-notice">
-                        Important Notice
-                    </a>
-
-                    <a href="#contact">
-                        Contact Global Air Hub
-                    </a>
-
-                </aside>
-
-
-                <!-- =====================================================
-                 MAIN CONTENT
-            ====================================================== -->
-
-                <article class="legal-content">
-
-
-                    <!-- =================================================
-                     OVERVIEW
-                ================================================== -->
-
-                    <section id="overview">
-
-                        <h2>
-                            Service Fee Overview
-                        </h2>
-
-                        <p>
-                            Global Air Hub may charge service fees for certain
-                            travel booking and customer assistance services.
-                            These fees help cover the costs associated with
-                            processing reservations, providing booking assistance,
-                            and supporting travelers before and after their
-                            purchase.
-                        </p>
-
-                        <p>
-                            Service fees may vary depending on the type of travel
-                            service, itinerary, passenger category, booking
-                            channel, and level of assistance required.
-                        </p>
-
-                        <p>
-                            The applicable Global Air Hub service fee is separate
-                            from airline fares, government taxes, airport charges,
-                            baggage fees, and other charges imposed by airlines
-                            or third-party travel providers.
-                        </p>
-
-
-                        <div class="notice-box">
-
-                            <i class="fa-solid fa-circle-info"></i>
-
-                            <p>
-                                <strong>Please note:</strong>
-                                The final service fee applicable to your booking
-                                will be displayed during the booking or payment
-                                process. Please review the complete amount before
-                                submitting payment.
-                            </p>
-
-                        </div>
-
-                    </section>
-
-
-                    <!-- =================================================
-                     STANDARD BOOKING FEES
-                ================================================== -->
-
-                    <section id="booking-fees">
-
-                        <h2>
-                            Standard Booking Service Fees
-                        </h2>
-
-                        <p>
-                            The following service fees may apply to eligible
-                            bookings made through Global Air Hub. Unless otherwise
-                            stated, fees are based on the applicable booking unit
-                            shown below.
-                        </p>
-
-
-                        <div class="fee-table-wrapper">
-
-                            <table class="fee-table">
-
-                                <thead>
-
-                                    <tr>
-                                        <th>
-                                            Service Type
-                                        </th>
-
-                                        <th>
-                                            Applicable Bookings
-                                        </th>
-
-                                        <th>
-                                            Fee Amount
-                                        </th>
-
-                                    </tr>
-
-                                </thead>
-
-
-                                <tbody>
-
-                                    <tr>
-
-                                        <td>
-                                            <strong>
-                                                Online Flight Booking Service Fee
-                                            </strong>
-                                            <br>
-                                            <small>
-                                                Per passenger, per ticket
-                                            </small>
-                                        </td>
-
-                                        <td>
-                                            U.S. Domestic &amp;
-                                            International Flights
-                                        </td>
-
-                                        <td>
-                                            Up to <strong>$50</strong>
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            <strong>
-                                                Online Hotel Booking Service Fee
-                                            </strong>
-                                            <br>
-                                            <small>
-                                                Per night, per room
-                                            </small>
-                                        </td>
-
-                                        <td>
-                                            All Hotel Reservations
-                                        </td>
-
-                                        <td>
-                                            Up to <strong>$35</strong>
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            <strong>
-                                                Online Car Rental Service Fee
-                                            </strong>
-                                            <br>
-                                            <small>
-                                                Per rental
-                                            </small>
-                                        </td>
-
-                                        <td>
-                                            All Vehicle Rentals
-                                        </td>
-
-                                        <td>
-                                            Up to <strong>$40</strong>
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            <strong>
-                                                Online Cruise Booking Service Fee
-                                            </strong>
-                                            <br>
-                                            <small>
-                                                Per passenger
-                                            </small>
-                                        </td>
-
-                                        <td>
-                                            All Cruise Bookings
-                                        </td>
-
-                                        <td>
-                                            Up to <strong>$200</strong>
-                                        </td>
-
-                                    </tr>
-
-                                </tbody>
-
-                            </table>
-
-                        </div>
-
-
-                        <p>
-                            All service fees will be converted into your local
-                            currency and displayed at checkout.
-                        </p>
-
-                    </section>
-
-
-                    <!-- =================================================
-                     ADDITIONAL SERVICE FEES
-                ================================================== -->
-
-                    <section id="additional-fees">
-
-                        <h2>
-                            Additional Service Fee Variations
-                        </h2>
-
-                        <p>
-                            Depending on the itinerary, booking type, destination,
-                            passenger requirements, or travel options selected,
-                            additional service fee variations may apply.
-                        </p>
-
-
-                        <div class="fee-table-wrapper">
-
-                            <table class="fee-table">
-
-                                <thead>
-
-                                    <tr>
-
-                                        <th>
-                                            Service / Booking Type
-                                        </th>
-
-                                        <th>
-                                            Maximum Service Fee
-                                        </th>
-
-                                    </tr>
-
-                                </thead>
-
-
-                                <tbody>
-
-                                    <tr>
-
-                                        <td>
-                                            Online Vacation Package Bookings
-                                        </td>
-
-                                        <td>
-                                            Up to <strong>$50</strong>
-                                            per passenger
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            Business or First-Class Airfare
-                                        </td>
-
-                                        <td>
-                                            Up to <strong>$200</strong>
-                                            per passenger
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            Multi-City or Open-Jaw Travel Routes
-                                        </td>
-
-                                        <td>
-                                            Up to <strong>$100</strong>
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            High-Fraud-Risk Destinations
-                                        </td>
-
-                                        <td>
-                                            Up to <strong>$40</strong>
-                                            per passenger
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            Flexible Travel Options
-                                            <br>
-                                            <small>
-                                                Alternate dates or nearby airports
-                                            </small>
-                                        </td>
-
-                                        <td>
-                                            Up to <strong>$55</strong>
-                                            per passenger
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            Cruise Bookings
-                                        </td>
-
-                                        <td>
-                                            Up to <strong>$200</strong>
-                                            per passenger
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td>
-                                            Unaccompanied Minor Bookings
-                                        </td>
-
-                                        <td>
-                                            Up to <strong>$100</strong>
-                                        </td>
-
-                                    </tr>
-
-                                </tbody>
-
-                            </table>
-
-                        </div>
-
-                    </section>
-
-
-                    <!-- =================================================
-                     CONTACT CENTER
-                ================================================== -->
-
-                    <section id="contact-center">
-
-                        <h2>
-                            Contact Center Service Fees
-                        </h2>
-
-                        <p>
-                            Phone-assisted bookings may involve higher service
-                            fees because they can require additional itinerary
-                            research, manual processing, special assistance, or
-                            more complex booking arrangements.
-                        </p>
-
-                        <p>
-                            Contact center service fees may range from
-                            <strong>$15 to $250 per passenger</strong>,
-                            depending on the nature and complexity of the
-                            requested service.
-                        </p>
-
-                        <p>
-                            For senior passengers, applicable contact center
-                            service fees may be up to <strong>$125</strong>.
-                        </p>
-
-
-                        <div class="notice-box">
-
-                            <i class="fa-solid fa-headset"></i>
-
-                            <p>
-                                <strong>Phone Assistance:</strong>
-                                The applicable contact center service fee will be
-                                disclosed before the transaction is completed,
-                                where applicable.
-                            </p>
-
-                        </div>
-
-                    </section>
-
-
-                    <!-- =================================================
-                     CURRENCY & PASSENGER CATEGORIES
-                ================================================== -->
-
-                    <section id="currency">
-
-                        <h2>
-                            Currency and Passenger Categories
-                        </h2>
-
-                        <p>
-                            All Global Air Hub service fees will be converted into
-                            your local currency and displayed at checkout.
-                        </p>
-
-                        <p>
-                            Passenger categories may include:
-                            <strong>adults, children, infants, students,
-                                seniors, and military personnel.</strong>
-                        </p>
-
-                        <p>
-                            Service fees are generally charged according to the
-                            applicable booking or service requirements and may
-                            vary depending on the type of reservation or assistance
-                            requested.
-                        </p>
-
-                    </section>
-
-
-                    <!-- =================================================
-                     REFUNDS & CANCELLATIONS
-                ================================================== -->
-
-                    <section id="refunds">
-
-                        <h2>
-                            Service Fee Refund and Cancellation Policy
-                        </h2>
-
-                        <p>
-                            Global Air Hub service fees are typically
-                            <strong>non-refundable</strong> and may change without
-                            prior notice.
-                        </p>
-
-                        <p>
-                            If a cancellation occurs within 24 hours of booking,
-                            applicable service fees may be refundable, subject to
-                            the terms and conditions of the booking and applicable
-                            service rules.
-                        </p>
-
-                        <p>
-                            After the applicable 24-hour period, service fees are
-                            generally non-refundable unless otherwise stated or
-                            required by applicable law.
-                        </p>
-
-                        <p>
-                            Refundability of an airline ticket does not
-                            automatically mean that Global Air Hub service fees
-                            will be refunded. Airline refunds and Global Air Hub
-                            service fees are separate components of the transaction.
-                        </p>
-
-
-                        <div class="notice-box">
-
-                            <i class="fa-solid fa-circle-exclamation"></i>
-
-                            <p>
-                                <strong>Important:</strong>
-                                Before cancelling or modifying your reservation,
-                                please review the applicable fare rules, airline
-                                policies, and Global Air Hub service fee conditions.
-                            </p>
-
-                        </div>
-
-                    </section>
-
-
-                    <!-- =================================================
-                     PAYMENT & DISCLOSURE
-                ================================================== -->
-
-                    <section id="payment">
-
-                        <h2>
-                            Payment and Fee Disclosure
-                        </h2>
-
-                        <p>
-                            The final amount displayed during checkout represents
-                            the total amount payable for the selected travel
-                            services and applicable Global Air Hub charges.
-                        </p>
-
-                        <p>
-                            Service fees may be presented separately from airfare,
-                            taxes, government charges, and other supplier-imposed
-                            fees so that travelers can review the components of
-                            their transaction before payment.
-                        </p>
-
-                        <p>
-                            Any applicable bank, card issuer, currency conversion,
-                            or foreign transaction fees imposed by your payment
-                            provider are separate from Global Air Hub service fees.
-                        </p>
-
-
-                        <div class="notice-box">
-
-                            <i class="fa-solid fa-shield-halved"></i>
-
-                            <p>
-                                <strong>No Hidden Charges:</strong>
-                                The amount displayed at checkout reflects your
-                                final total. Please review the complete payment
-                                summary before submitting your payment.
-                            </p>
-
-                        </div>
-
-                    </section>
-
-
-                    <!-- =================================================
-                     IMPORTANT NOTICE
-                ================================================== -->
-
-                    <section id="important-notice">
-
-                        <h2>
-                            Important Service Fee Notice
-                        </h2>
-
-                        <p>
-                            All Global Air Hub service fees are subject to change
-                            without prior notice. Applicable fees may vary based
-                            on booking type, itinerary, destination, passenger
-                            category, service requirements, and the booking channel.
-                        </p>
-
-                        <p>
-                            Travelers should always review the final total charges
-                            displayed at checkout before submitting payment.
-                        </p>
-
-
-                        <div class="notice-box">
-
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-
-                            <p>
-                                <strong>IMPORTANT NOTICE:</strong>
-                                ALL SERVICE FEES ARE SUBJECT TO CHANGE WITHOUT
-                                PRIOR NOTICE. PLEASE REVIEW THE FINAL TOTAL
-                                CHARGES BEFORE SUBMITTING PAYMENT.
-                            </p>
-
-                        </div>
-
-                    </section>
-
-
-                    <!-- =================================================
-                     TERMS & CONDITIONS
-                ================================================== -->
-
-                    <section id="terms-reference">
-
-                        <h2>
-                            Related Terms and Conditions
-                        </h2>
-
-                        <p>
-                            Service fees are also subject to the applicable
-                            Global Air Hub booking terms and conditions.
-                            For complete information regarding bookings,
-                            cancellations, refunds, changes, and other
-                            applicable policies, please review our
-                            <a href="https://globalairhub.com/terms-and-conditions">
-                                <strong>Terms &amp; Conditions</strong>
-                            </a>.
-                        </p>
-
-                    </section>
-
-
-                    <!-- =================================================
-                     CONTACT
-                ================================================== -->
-
-                    <section id="contact">
-
-                        <h2>
-                            Contact Global Air Hub
-                        </h2>
-
-                        <p>
-                            If you have questions about a service fee, booking
-                            charge, payment amount, or any other fee associated
-                            with your Global Air Hub reservation, our travel
-                            support team is available to assist you.
-                        </p>
-
-
-                        <div class="contact-panel">
-
-                            <i class="fa-solid fa-headset"></i>
-
-                            <div>
-
-                                <strong>
-                                    Global Air Hub Travel Support
-                                </strong>
-
-                                <span>
-                                    Available 24 hours a day, 7 days a week
-                                </span>
-
-                                <a href="tel:+12163022732">
-                                    +1-216-302-2732
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </section>
-
-
-                </article>
-
-            </div>
-
+    <div class="sf-page">
+
+        <h1>Our Service Fees &ndash; GlobalAirHub</h1>
+
+        <table class="sf-table">
+            <thead>
+                <tr>
+                    <th>Service Type</th>
+                    <th>Applicable Bookings</th>
+                    <th>Code</th>
+                    <th>Fee Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>Online Flight Booking Service Fee</strong>
+                        <small>(*per passenger, per ticket)</small>
+                    </td>
+                    <td class="applicable">U.S. Domestic &amp; International Flights</td>
+                    <td class="code-col">Fees &#9674;</td>
+                    <td>Up to $50</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Online Hotel Booking Service Fee</strong>
+                        <small>(per night, per room)</small>
+                    </td>
+                    <td class="applicable">All Hotel Reservations</td>
+                    <td class="code-col">Fees &#9674;</td>
+                    <td>Up to $35</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Online Car Rental Service Fee</strong>
+                        <small>(per rental)</small>
+                    </td>
+                    <td class="applicable">All Vehicle Rentals</td>
+                    <td class="code-col">Fees &#9674;</td>
+                    <td>Up to $40</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Online Cruise Booking Service Fee</strong>
+                        <small>(per passenger)</small>
+                    </td>
+                    <td class="applicable">All Cruise Bookings</td>
+                    <td class="code-col">Fees &#9674;</td>
+                    <td>Up to $200</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="sf-note-currency">All service fees will be converted into your local currency at checkout.</p>
+
+        <p class="sf-disclaimer">
+            * Passenger categories include adults, children, infants, students, seniors, and military personnel. Service fees are typically non-refundable
+            and may change without prior notice. If cancellation occurs within 24 hours of booking, service fees may be refundable. After 24 hours, non-refundable rules apply.
+        </p>
+
+        <p class="sf-bold-note">The amount displayed at checkout reflects your final total &mdash; no hidden charges.</p>
+
+        <p class="sf-variations-title">&#9674; Additional service fee variations may include:</p>
+        <ul class="sf-variations-list">
+            <li>- Up to $50 per passenger for online vacation package bookings</li>
+            <li>- Up to $200 per passenger for business or first-class airfare bookings</li>
+            <li>- Up to $100 for multi-city or open-jaw travel routes</li>
+            <li>- Up to $40 per passenger on high-fraud-risk destinations</li>
+            <li>- Up to $55 per passenger when choosing flexible travel options (alternate dates/nearby airports)</li>
+            <li>- Up to $200 per passenger for cruise bookings</li>
+            <li>- Up to $100 service fee for unaccompanied minor bookings</li>
+        </ul>
+
+        <p class="sf-contact-center">
+            <strong>- Contact Center Service Fees:</strong> Phone-assisted bookings may incur higher service fees due to itinerary complexity. Charges may range
+            from $15&ndash;$250 per passenger (or up to $125 for seniors).
+        </p>
+
+        <div class="sf-important">
+            <strong>IMPORTANT NOTICE:</strong>
+            <p>ALL SERVICE FEES ARE SUBJECT TO CHANGE WITHOUT PRIOR NOTICE.</p>
+            <p>PLEASE REVIEW THE FINAL TOTAL CHARGES BEFORE SUBMITTING PAYMENT.</p>
         </div>
 
-    </main>
-    
+        <p class="sf-terms">
+            For complete policies, please review our <a href="Terms-of-Conditions.php"><u>Terms &amp; Conditions</u></a> .
+        </p>
 
-
+    </div>
 
     <?php include 'include/footer.php'; ?>
     <script src="js/main.js"></script>

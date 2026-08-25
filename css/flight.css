@@ -24,11 +24,12 @@ a { text-decoration: none; color: inherit; }
 .flight-hero {
     position: relative;
     width: 100%;
-    height: 360px;
+    min-height: 420px;
     overflow: hidden;
     background: linear-gradient(135deg, #56b4f5 0%, #1a7fc1 60%, #0d5a9e 100%);
     display: flex;
     align-items: center;
+    padding: 60px 0;
 }
 
 .flight-hero-bg {
@@ -48,125 +49,6 @@ a { text-decoration: none; color: inherit; }
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Promo Card */
-.promo-card {
-    background: white;
-    border-radius: 10px;
-    padding: 24px 28px;
-    width: 340px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
-}
-
-.promo-card h3 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed #ccc;
-}
-
-.promo-tagline {
-    font-size: 15px;
-    font-weight: 800;
-    color: #2e7d32;
-    margin-bottom: 16px;
-    display: block;
-}
-
-.promo-form {
-    display: flex;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.promo-form input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 11px 14px;
-    font-size: 13px;
-    color: #555;
-}
-
-.promo-form input::placeholder { color: #aaa; }
-
-.promo-form button {
-    background: #2e7d32;
-    color: white;
-    border: none;
-    padding: 11px 18px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.2s;
-}
-
-.promo-form button:hover { background: #1b5e20; }
-
-/* Super Saver Badge */
-.super-saver {
-    width: 190px;
-    height: 190px;
-    background: #f57c00;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 16px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-    gap: 3px;
-}
-
-.ss-title { font-size: 17px; font-weight: 800; line-height: 1.2; }
-
-.ss-route {
-    font-size: 11px;
-    font-weight: 500;
-    opacity: 0.95;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-}
-
-.ss-price {
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 1;
-    margin: 3px 0 2px;
-}
-
-.ss-price sup { font-size: 16px; font-weight: 800; vertical-align: super; }
-.ss-dates { font-size: 10px; opacity: 0.9; font-weight: 500; }
-
-.ss-arrow {
-    width: 28px;
-    height: 28px;
-    border: 2px solid white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    margin-top: 3px;
-}
-
-/* ══════════════════════════════
-   SEARCH BAR
-══════════════════════════════ */
-.flight-search-bar {
-    background: #1b264f;
-    padding: 16px 0 14px;
 }
 
 .trip-type-row {
@@ -486,27 +368,12 @@ a { text-decoration: none; color: inherit; }
    RESPONSIVE
 ══════════════════════════════ */
 @media (max-width: 991px) {
-    .flight-hero { height: 320px; }
-    .promo-card { width: 280px; padding: 18px 20px; }
-    .super-saver { width: 160px; height: 160px; }
-    .super-saver .ss-price { font-size: 26px; }
-    .si-field.date-field     { flex: 0 0 110px; }
-    .si-field.traveler-field { flex: 0 0 118px; }
-    .si-field.class-field    { flex: 0 0 110px; }
+    .flight-hero { min-height: 360px; }
     .deals-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-    .flight-hero { height: auto; padding: 30px 0; }
-    .flight-hero-content { flex-direction: column; gap: 20px; align-items: center; }
-    .promo-card { width: 100%; max-width: 420px; }
-    .super-saver { width: 150px; height: 150px; }
-    .search-inputs-row { flex-wrap: wrap; height: auto; }
-    .si-field { flex: 1 1 calc(50% - 4px); height: 46px; }
-    .si-field.date-field,
-    .si-field.traveler-field,
-    .si-field.class-field { flex: 1 1 calc(50% - 4px); }
-    .btn-search-flight { width: 100%; height: 46px; }
+    .flight-hero { min-height: auto; padding: 40px 0; }
     .deals-grid { grid-template-columns: 1fr; }
     .deals-title { font-size: 22px; }
     .city-code { font-size: 22px; }
@@ -515,11 +382,6 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 480px) {
     .fsb-container { padding: 0 15px; }
     .flight-hero-content { padding: 0 15px; }
-    .si-field { flex: 1 1 100%; }
-    .si-field.date-field,
-    .si-field.traveler-field,
-    .si-field.class-field { flex: 1 1 100%; }
-    .super-saver .ss-price { font-size: 22px; }
     .deal-card { padding: 14px 12px; }
     .city-code { font-size: 18px; }
     .deal-price { font-size: 18px; }

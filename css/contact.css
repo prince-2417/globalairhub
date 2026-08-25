@@ -398,13 +398,6 @@ a { text-decoration: none; color: inherit; }
     gap: 20px;
 }
 
-.cnt-map-wrap {
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-}
-
 .cnt-quick-box {
     background: linear-gradient(135deg, #0d1b3e, #1b264f, #1a4fa8);
     border-radius: 14px;
@@ -454,17 +447,28 @@ a { text-decoration: none; color: inherit; }
     display: flex;
     flex-direction: column;
     gap: 1px;
+    min-width: 0;
+    flex: 1;
 }
 
 .cnt-quick-call span {
+    display: block;
+    visibility: visible;
+    opacity: 1;
     font-size: 11px;
-    color: rgba(255,255,255,0.65);
+    color: #dbeafe;
     font-weight: 500;
+    line-height: 1.35;
 }
 
 .cnt-quick-call strong {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    color: #fff;
     font-size: 16px;
     font-weight: 800;
+    line-height: 1.35;
 }
 
 .cnt-quick-chat {
@@ -522,6 +526,50 @@ a { text-decoration: none; color: inherit; }
 
 .cnt-hours-box li span { color: #666; }
 .cnt-hours-box li strong { color: #111; font-weight: 700; }
+
+.cnt-services-box {
+    padding: 24px;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.cnt-services-box h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: #111;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.cnt-services-box h4 i { color: #2563eb; }
+
+.cnt-services-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.cnt-services-list span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f5f8ff;
+    color: #273b70;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.cnt-services-list span i {
+    color: #2563eb;
+    font-size: 13px;
+    flex-shrink: 0;
+}
 
 /* ══════════════════════════════
    FAQ
@@ -676,7 +724,6 @@ a { text-decoration: none; color: inherit; }
     .cnt-info-grid { grid-template-columns: repeat(2, 1fr); }
     .cnt-main-grid { grid-template-columns: 1fr; }
     .cnt-side { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .cnt-map-wrap { grid-column: 1 / -1; }
     .cnt-faq-grid { grid-template-columns: 1fr; gap: 0; }
     .cnt-cta-inner { flex-direction: column; text-align: center; padding: 36px 28px; }
     .cnt-cta-actions { flex-direction: column; width: 100%; }
@@ -700,4 +747,5 @@ a { text-decoration: none; color: inherit; }
     .cnt-hero-content { padding: 0 16px; }
     .cnt-hero-content h1 { font-size: 24px; }
     .cnt-cta-inner { padding: 28px 20px; }
+    .cnt-services-list { grid-template-columns: 1fr; }
 }

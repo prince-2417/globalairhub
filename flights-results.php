@@ -1,15 +1,55 @@
 <!DOCTYPE html>
+<?php
+function fr_input(string $key, string $fallback): string
+{
+    $value = trim((string) ($_POST[$key] ?? $fallback));
+    return $value !== '' ? $value : $fallback;
+}
+
+function fr_airport_code(string $airport, string $fallback): string
+{
+    if (preg_match('/\(([A-Za-z]{3})\)/', $airport, $matches)) {
+        return strtoupper($matches[1]);
+    }
+
+    $letters = preg_replace('/[^A-Za-z]/', '', $airport);
+    return strlen($letters) >= 3 ? strtoupper(substr($letters, 0, 3)) : $fallback;
+}
+
+function fr_format_date(string $date): string
+{
+    $parsed = DateTime::createFromFormat('Y-m-d', $date);
+    return $parsed ? $parsed->format('M j, Y') : $date;
+}
+
+$fromAirport = fr_input('from_code', 'New York (JFK)');
+$toAirport = fr_input('to_code', 'Los Angeles (LAX)');
+$departDate = fr_input('depart_date', '2026-07-27');
+$returnDate = fr_input('return_date', '2026-08-03');
+$tripType = fr_input('tripType', 'roundtrip');
+$travelSelection = fr_input('travelers', '1 Passenger, Economy');
+$originCode = fr_airport_code($fromAirport, 'JFK');
+$destinationCode = fr_airport_code($toAirport, 'LAX');
+$dateSummary = fr_format_date($departDate) . ($tripType === 'roundtrip' ? ' – ' . fr_format_date($returnDate) : '');
+
+[$travelerSummary, $cabinSummary] = array_pad(array_map('trim', explode(',', $travelSelection, 2)), 2, 'Economy');
+$travelerSummary = $travelerSummary ?: '1 Passenger';
+$cabinSummary = $cabinSummary ?: 'Economy';
+?>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Results - New York to Los Angeles | Global Air Hub</title>
+    <title>Flight Results - <?= htmlspecialchars($fromAirport) ?> to <?= htmlspecialchars($toAirport) ?> | Global Air Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/flight.css">
+    <link rel="stylesheet" href="css/search-form.css">
     <link rel="stylesheet" href="css/flights-results.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body>
@@ -20,74 +60,58 @@
     <section class="fr-hero">
         <div class="fr-hero-bg"></div>
         <div class="fr-hero-content">
-            <div class="fr-hero-copy">
-                <span class="fr-hero-tag">Flight Search</span>
-                <h1>Find the best flights from New York to Los Angeles</h1>
-                <p>Compare top airlines, save on round-trip fares, and book the perfect flight in seconds.</p>
-                <a href="http://localhost/cheap/flights-results.php#" class="fr-hero-cta">View Latest Deals</a>
+            <div class="fr-hero-top">
+                <div class="fr-hero-copy">
+                    <span class="fr-hero-tag">Flight Search</span>
+                    <h1>Find the best flights from <?= htmlspecialchars($fromAirport) ?> to <?= htmlspecialchars($toAirport) ?></h1>
+                    <p>Compare top airlines, save on round-trip fares, and book the perfect flight in seconds.</p>
+                    <a href="http://localhost/cheap/flights-results.php#" class="fr-hero-cta">View Latest Deals</a>
+                </div>
+                <div class="fr-hero-stats">
+                    <div><strong>48</strong> flights today</div>
+                    <div><strong>4.8/5</strong> traveler rating</div>
+                    <div><strong>24/7</strong> support available</div>
+                </div>
             </div>
-            <div class="fr-hero-stats">
-                <div><strong>48</strong> flights today</div>
-                <div><strong>4.8/5</strong> traveler rating</div>
-                <div><strong>24/7</strong> support available</div>
+
+            <!-- Flight Search -->
+            <div class="fr-hero-search">
+                <form action="flights-results" method="post" id="serachform">
+                    <div class="booking-box">
+                        <div class="tab-content1 active" id="flights">
+                            <div class="trip-type">
+                                <label><input type="radio" name="tripType" value="roundtrip" checked> Round Trip</label>
+                                <label><input type="radio" name="tripType" value="oneway"> One Way</label>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="input-box">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <input type="text" id="fromAirport" name="from_code" value="<?= htmlspecialchars($fromAirport) ?>" placeholder="From Where?">
+                                </div>
+                                <div class="input-box">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <input type="text" id="toAirport" name="to_code" value="<?= htmlspecialchars($toAirport) ?>" placeholder="To Where?">
+                                </div>
+                                <div class="date-box" id="departDateBox">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <input type="text" id="date1" name="depart_date" value="<?= htmlspecialchars($departDate) ?>" placeholder="YYYY-MM-DD">
+                                </div>
+                                <div class="date-box" id="returnDateBox">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <input type="text" id="date2" name="return_date" value="<?= htmlspecialchars($returnDate) ?>" placeholder="YYYY-MM-DD">
+                                </div>
+                                <div class="traveler-wrapper">
+                                    <input type="text" class="traveler-input" name="travelers" value="<?= htmlspecialchars($travelSelection) ?>" placeholder="1 Passenger, Economy" readonly>
+                                </div>
+                                <button class="search-btn1" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
-
-    <!-- Search Bar -->
-    <div class="flight-search-bar">
-        <div class="fsb-container">
-            <div class="trip-type-row">
-                <label class="trip-radio"><input type="radio" name="trip" checked> Round trip</label>
-                <label class="trip-radio"><input type="radio" name="trip"> Oneway</label>
-            </div>
-            <div class="search-inputs-row">
-                <div class="si-field">
-                    <i class="fa-solid fa-location-dot" style="color:#e53935;"></i>
-                    <input type="text" value="New York (JFK)">
-                </div>
-                <div class="si-field">
-                    <i class="fa-solid fa-location-dot" style="color:#1a73e8;"></i>
-                    <input type="text" value="Los Angeles (LAX)">
-                </div>
-                <div class="si-field date-field">
-                    <i class="fa-regular fa-calendar" style="color:#1a73e8;"></i>
-                    <input type="text" value="07-27-2026" readonly>
-                </div>
-                <div class="si-field date-field">
-                    <i class="fa-regular fa-calendar" style="color:#1a73e8;"></i>
-                    <input type="text" value="08-03-2026" readonly>
-                </div>
-                <div class="si-field traveler-field">
-                    <i class="fa-solid fa-user" style="color:#1a73e8;"></i>
-                    <div class="select-wrapper">
-                        <select>
-                            <option>1 Traveler</option>
-                            <option>2 Travelers</option>
-                            <option>3 Travelers</option>
-                        </select>
-                        <i class="fa-solid fa-chevron-down chevron"></i>
-                    </div>
-                </div>
-                <div class="si-field class-field">
-                    <i class="fa-solid fa-chair" style="color:#1a73e8;"></i>
-                    <div class="select-wrapper">
-                        <select>
-                            <option>Economy</option>
-                            <option>Business</option>
-                            <option>First Class</option>
-                        </select>
-                        <i class="fa-solid fa-chevron-down chevron"></i>
-                    </div>
-                </div>
-                <button class="btn-search-flight">Search</button>
-            </div>
-            <div class="search-bottom-row">
-                <label class="direct-flights-check"><input type="checkbox"> Direct Flights Only</label>
-                <span class="unaccompanied-link">Unaccompanied Minor</span>
-            </div>
-        </div>
-    </div>
 
     <!-- Results Page -->
     <div class="fr-page">
@@ -251,9 +275,9 @@
                         Need help finding the right flight?
                     </p>
 
-                    <a href="tel:+12163022732" class="fr-cta-call-btn">
+                    <a href="tel:+1-877-513-3980" class="fr-cta-call-btn">
                         <i class="fa-solid fa-phone"></i>
-                        +1-216-302-2732
+                        1-877-513-3980
                     </a>
 
                     <span>
@@ -273,17 +297,17 @@
                     <div class="fr-results-info">
 
                         <h1 class="fr-results-title">
-                            New York
+                            <?= htmlspecialchars($fromAirport) ?>
                             <i class="fa-solid fa-arrow-right-long"></i>
-                            Los Angeles
+                            <?= htmlspecialchars($toAirport) ?>
                         </h1>
 
                         <p class="fr-results-meta">
                             Jul 27 – Aug 3, 2026
                             &bull;
-                            1 Traveler
+                            <?= htmlspecialchars($travelerSummary) ?>
                             &bull;
-                            Economy
+                            <?= htmlspecialchars($cabinSummary) ?>
                             &bull;
                             <strong>
                                 <span id="resultsCount">6</span>
@@ -329,10 +353,10 @@
                     </div>
 
                     <a
-                        href="tel:+12163022732"
+                        href="tel:+1-877-513-3980"
                         class="fr-call-banner-btn">
                         <i class="fa-solid fa-phone"></i>
-                        Call +1-216-302-2732
+                        Call 1-877-513-3980
                     </a>
 
                 </div>
@@ -392,7 +416,7 @@
                             <span class="fr-price">$189</span>
                             <span class="fr-price-type">Round Trip</span>
 
-                            <a href="tel:+12163022732" class="fr-book-btn">
+                            <a href="tel:+1-877-513-3980" class="fr-book-btn">
                                 Select Flight
                             </a>
                         </div>
@@ -476,7 +500,7 @@
                             <span class="fr-price">$209</span>
                             <span class="fr-price-type">Round Trip</span>
 
-                            <a href="tel:+12163022732" class="fr-book-btn">
+                            <a href="tel:+1-877-513-3980" class="fr-book-btn">
                                 Select Flight
                             </a>
                         </div>
@@ -555,7 +579,7 @@
                             <span class="fr-price">$169</span>
                             <span class="fr-price-type">Round Trip</span>
 
-                            <a href="tel:+12163022732" class="fr-book-btn">
+                            <a href="tel:+1-877-513-3980" class="fr-book-btn">
                                 Select Flight
                             </a>
                         </div>
@@ -636,7 +660,7 @@
                             <span class="fr-price">$225</span>
                             <span class="fr-price-type">Round Trip</span>
 
-                            <a href="tel:+12163022732" class="fr-book-btn">
+                            <a href="tel:+1-877-513-3980" class="fr-book-btn">
                                 Select Flight
                             </a>
                         </div>
@@ -722,7 +746,7 @@
                             <span class="fr-price">$139</span>
                             <span class="fr-price-type">Round Trip</span>
 
-                            <a href="tel:+12163022732" class="fr-book-btn">
+                            <a href="tel:+1-877-513-3980" class="fr-book-btn">
                                 Select Flight
                             </a>
                         </div>
@@ -803,7 +827,7 @@
                             <span class="fr-price">$199</span>
                             <span class="fr-price-type">Round Trip</span>
 
-                            <a href="tel:+12163022732" class="fr-book-btn">
+                            <a href="tel:+1-877-513-3980" class="fr-book-btn">
                                 Select Flight
                             </a>
                         </div>
@@ -863,10 +887,26 @@
         const resultsCount = document.getElementById('resultsCount');
         const resultSummary = document.querySelector('.fr-load-more p');
         const flightCards = [...document.querySelectorAll('.fr-flight-card')];
+        const searchedOriginCode = <?= json_encode($originCode) ?>;
+        const searchedDestinationCode = <?= json_encode($destinationCode) ?>;
+        const searchedDateSummary = <?= json_encode($dateSummary) ?>;
         const filterGroups = document.querySelectorAll('.fr-filter-group');
         const stopInputs = [...filterGroups[0].querySelectorAll('input[type="checkbox"]')];
         const airlineInputs = [...filterGroups[1].querySelectorAll('input[type="checkbox"]')];
         const timeInputs = [...document.querySelectorAll('.fr-time-btn input')];
+
+        const resultsMeta = document.querySelector('.fr-results-meta');
+        if (resultsMeta && resultsMeta.firstChild) {
+            resultsMeta.firstChild.nodeValue = `\n                            ${searchedDateSummary}\n                            `;
+        }
+
+        flightCards.forEach(card => {
+            const airportLabels = card.querySelectorAll('.fr-airport');
+            if (airportLabels.length === 2) {
+                airportLabels[0].textContent = searchedOriginCode;
+                airportLabels[1].textContent = searchedDestinationCode;
+            }
+        });
 
         function selectedValues(inputs) {
             return inputs.filter(input => input.checked).map(input => input.value);
@@ -950,8 +990,8 @@
                     details.className = 'fr-flight-details';
                     details.innerHTML = `
                     <div><strong>${airline} ${flightNumber}</strong><span>Operated by ${airline}</span></div>
-                    <div><strong>${departure} JFK</strong><span>Departure</span></div>
-                    <div><strong>${arrival} LAX</strong><span>Arrival</span></div>
+                    <div><strong>${departure} ${searchedOriginCode}</strong><span>Departure</span></div>
+                    <div><strong>${arrival} ${searchedDestinationCode}</strong><span>Arrival</span></div>
                     <div><strong>${duration}</strong><span>${stops}</span></div>`;
                     details.hidden = true;
                     card.querySelector('.fr-card-footer').before(details);
@@ -968,6 +1008,7 @@
     </script>
 
     <script src="js/main.js"></script>
+    <script src="js/search-form.js"></script>
 
 </body>
 

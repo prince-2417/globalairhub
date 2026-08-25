@@ -83,6 +83,10 @@
 .date-box {
     position: relative;
     width: 100%;
+    min-width: 0;
+    display: block;
+    padding: 0;
+    flex: initial;
 }
 
 /* Icon positioning */
@@ -95,12 +99,15 @@
     color: #f59e0b;
     font-size: 14px;
     pointer-events: none;
+    z-index: 1;
 }
 
 /* Input padding so text doesn't overlap icon */
 .input-box input,
 .date-box input {
+    display: block;
     width: 100%;
+    min-height: 44px;
     padding: 12px 12px 12px 38px;
     /* left padding for icon */
     border: 1px solid #f59e0b;

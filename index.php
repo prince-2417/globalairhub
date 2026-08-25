@@ -81,7 +81,7 @@
                                     <input type="text" id="date2" name="return_date" placeholder="YYYY-MM-DD">
                                 </div>
                                 <div class="traveler-wrapper">
-                                    <input type="text" class="traveler-input" placeholder="1 Passenger, Economy" readonly>
+                                    <input type="text" class="traveler-input" name="travelers" placeholder="1 Passenger, Economy" readonly>
                                 </div>
                                 <button class="search-btn1">Search</button>
                             </div>
@@ -962,7 +962,7 @@
                                 Talk to Our Travel Team
                             </a>
 
-                            <a href="/flights" class="cta-secondary-btn">
+                            <a href="#serachform" class="cta-secondary-btn">
                                 Explore Flight Options
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -1041,15 +1041,15 @@
                                         Start Planning
                                     </a>
 
-                                    <a href="tel:+12163022732" class="call-action-btn">
+                                    <a href="tel:18775133980" class="call-action-btn">
 
-                                        <div class="call-icon-circle">
+                                        <!-- <div class="call-icon-circle">
                                             <i class="fa-solid fa-phone"></i>
-                                        </div>
+                                        </div> -->
 
                                         <span>
                                             Call Us:
-                                            <strong>+1-216-302-2732</strong>
+                                            <strong>1-877-513-3980</strong>
                                         </span>
 
                                     </a>
@@ -1081,9 +1081,7 @@
                                             </p>
                                         </div>
 
-                                        <div class="vendor-logo">
-                                            Rental
-                                        </div>
+
 
                                     </div>
 
@@ -1111,9 +1109,9 @@
 
                                     </div>
 
-                                    <button class="btn-blue-block">
+                                    <a href="tel:18775133980" class="btn-blue-block" style="display:block;text-align:center;text-decoration:none;">
                                         Explore Cars
-                                    </button>
+                                    </a>
 
                                 </div>
                             </div>
@@ -1457,7 +1455,7 @@
                                 make planning your next journey easier.
                             </p>
 
-                            <a href="#" class="blog-view-all">
+                            <a href="#blog-articles" class="blog-view-all">
                                 Explore All Articles
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
@@ -1466,7 +1464,7 @@
 
 
                         <!-- Right: Articles -->
-                        <div class="blog-articles">
+                        <div class="blog-articles" id="blog-articles">
 
                             <!-- Article 1 -->
                             <div class="blog-article-card">
