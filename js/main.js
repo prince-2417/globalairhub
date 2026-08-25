@@ -4,14 +4,20 @@ const mainNav = document.getElementById('main-nav');
 if (hamburger && mainNav) {
     hamburger.addEventListener('click', function(e) {
         e.stopPropagation();
+<<<<<<< HEAD
         const isOpen = hamburger.classList.toggle('open');
         mainNav.classList.toggle('open', isOpen);
         hamburger.setAttribute('aria-expanded', String(isOpen));
+=======
+        hamburger.classList.toggle('open');
+        mainNav.classList.toggle('open');
+>>>>>>> f41e7139067c8d0a3eada62a79e8a71fb8d7a882
     });
     document.addEventListener('click', function(e) {
         if (!mainNav.contains(e.target) && !hamburger.contains(e.target)) {
             hamburger.classList.remove('open');
             mainNav.classList.remove('open');
+<<<<<<< HEAD
             hamburger.setAttribute('aria-expanded', 'false');
         }
     });
@@ -31,10 +37,13 @@ if (hamburger && mainNav) {
             hamburger.classList.remove('open');
             mainNav.classList.remove('open');
             hamburger.setAttribute('aria-expanded', 'false');
+=======
+>>>>>>> f41e7139067c8d0a3eada62a79e8a71fb8d7a882
         }
     });
 }
 
+<<<<<<< HEAD
 document.addEventListener('keydown', function(event) {
     if (event.key !== 'Escape' || !hamburger || !mainNav) return;
     hamburger.classList.remove('open');
@@ -42,6 +51,8 @@ document.addEventListener('keydown', function(event) {
     hamburger.setAttribute('aria-expanded', 'false');
 });
 
+=======
+>>>>>>> f41e7139067c8d0a3eada62a79e8a71fb8d7a882
 document.querySelectorAll('.action-item.dropdown').forEach(function(item) {
     item.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -55,6 +66,7 @@ document.addEventListener('click', function() {
     document.querySelectorAll('.action-item.dropdown').forEach(d => d.classList.remove('open'));
 });
 
+<<<<<<< HEAD
 // Main navigation dropdown
 document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
     toggle.addEventListener('click', function(event) {
@@ -121,6 +133,8 @@ document.addEventListener('click', function() {
     }, { passive: true });
 })();
 
+=======
+>>>>>>> f41e7139067c8d0a3eada62a79e8a71fb8d7a882
 // Testimonials Carousel
 (function() {
     const track = document.getElementById('testiTrack');
